@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../global_store.dart';
-import '../utitlity/category_list.dart';
+import '../utility/category_list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

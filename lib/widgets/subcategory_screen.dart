@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/utitlity/extensions.dart';
+import '../utility/extensions.dart';
 import 'package:flutter/material.dart';
 
 class SubcategoryScreen extends StatelessWidget {

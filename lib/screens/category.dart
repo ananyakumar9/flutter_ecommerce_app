@@ -5,7 +5,7 @@ import 'package:mobx/mobx.dart';
 import 'package:provider/provider.dart';
 
 import '../global_store.dart';
-import '../utitlity/category_list.dart';
+import '../utility/category_list.dart';
 import '../widgets/category_item.dart';
 
 class Category extends StatefulWidget {

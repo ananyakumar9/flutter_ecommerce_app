@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../utitlity/constants.dart';
+import '../utility/constants.dart';
 
 class SearchBox extends StatelessWidget {
   final VoidCallback onTap;

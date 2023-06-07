@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/utitlity/constants.dart';
+import 'package:ecommerce_app/utility/constants.dart';
 import 'package:flutter/material.dart';
 
 class Account extends StatelessWidget {
