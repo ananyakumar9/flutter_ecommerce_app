@@ -5,6 +5,6 @@ class Upload extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Container(child: Text('Hello')));
+    return const Scaffold(body: Text('Hello'));
   }
 }

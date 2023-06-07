@@ -1,11 +1,17 @@
 import 'package:ecommerce_app/utility/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../customer_screens/index.dart';
+import '../global_store.dart';
 
 class Account extends StatelessWidget {
   const Account({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var globalStore = Provider.of<GlobalStore>(context);
+
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
       body: Stack(
@@ -75,15 +81,20 @@ class Account extends StatelessWidget {
                             flex: 1,
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.9,
-                                decoration: const BoxDecoration(
-                                    color: primary,
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(30),
-                                        bottomLeft: Radius.circular(30))),
-                                child: const Center(child: Text('Cart')),
+                              child: InkWell(
+                                onTap: () {
+                                  globalStore.setPageIndex(index: 3);
+                                },
+                                child: Container(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.9,
+                                  decoration: const BoxDecoration(
+                                      color: primary,
+                                      borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(30),
+                                          bottomLeft: Radius.circular(30))),
+                                  child: const Center(child: Text('Cart')),
+                                ),
                               ),
                             ),
                           ),
@@ -92,16 +103,25 @@ class Account extends StatelessWidget {
                             child: Padding(
                               padding:
                                   const EdgeInsets.symmetric(vertical: 8.0),
-                              child: Container(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.9,
-                                decoration:
-                                    BoxDecoration(color: Colors.grey.shade300),
-                                child: const Center(
-                                    child: Text(
-                                  'Orders',
-                                  style: TextStyle(color: primary),
-                                )),
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const CustomerOrders()));
+                                },
+                                child: Container(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.9,
+                                  decoration: BoxDecoration(
+                                      color: Colors.grey.shade300),
+                                  child: const Center(
+                                      child: Text(
+                                    'Orders',
+                                    style: TextStyle(color: primary),
+                                  )),
+                                ),
                               ),
                             ),
                           ),
@@ -109,18 +129,27 @@ class Account extends StatelessWidget {
                             flex: 1,
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.9,
-                                decoration: const BoxDecoration(
-                                    color: primary,
-                                    borderRadius: BorderRadius.only(
-                                        topRight: Radius.circular(30),
-                                        bottomRight: Radius.circular(30))),
-                                child: const Center(
-                                    child: Text(
-                                  'Wishlist',
-                                )),
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const Wishlist()));
+                                },
+                                child: Container(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.9,
+                                  decoration: const BoxDecoration(
+                                      color: primary,
+                                      borderRadius: BorderRadius.only(
+                                          topRight: Radius.circular(30),
+                                          bottomRight: Radius.circular(30))),
+                                  child: const Center(
+                                      child: Text(
+                                    'Wishlist',
+                                  )),
+                                ),
                               ),
                             ),
                           ),
@@ -186,7 +215,11 @@ class Account extends StatelessWidget {
                             ),
                             primaryDivider(context),
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                globalStore.setPageIndex(index: 0);
+                                Navigator.pushReplacementNamed(
+                                    context, '/welcome_screen');
+                              },
                               child: const ListTile(
                                 leading: Icon(Icons.logout),
                                 title: Text('Log Out'),

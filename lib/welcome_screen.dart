@@ -94,7 +94,7 @@ class _WelcomScreenState extends State<WelcomScreen>
               Align(
                 alignment: Alignment.centerRight,
                 child: Container(
-                  width: MediaQuery.of(context).size.width * 0.7,
+                  width: MediaQuery.of(context).size.width * 0.72,
                   decoration: const BoxDecoration(
                       color: Colors.white54,
                       borderRadius: BorderRadius.only(
@@ -135,7 +135,7 @@ class _WelcomScreenState extends State<WelcomScreen>
                               Navigator.pushReplacementNamed(
                                   context, '/supplier_screen');
                             },
-                            child: const Text('Sign In'),
+                            child: const Text('Sign Up'),
                           )
                         ],
                       )),
@@ -147,7 +147,7 @@ class _WelcomScreenState extends State<WelcomScreen>
               Align(
                 alignment: Alignment.centerLeft,
                 child: Container(
-                  width: MediaQuery.of(context).size.width * 0.7,
+                  width: MediaQuery.of(context).size.width * 0.72,
                   decoration: const BoxDecoration(
                       color: Colors.white54,
                       borderRadius: BorderRadius.only(
@@ -173,7 +173,7 @@ class _WelcomScreenState extends State<WelcomScreen>
                               Navigator.pushReplacementNamed(
                                   context, '/customer_screen');
                             },
-                            child: const Text('Sign In'),
+                            child: const Text('Sign Up'),
                           ),
                           AnimatedBuilder(
                             animation: _controller.view,
