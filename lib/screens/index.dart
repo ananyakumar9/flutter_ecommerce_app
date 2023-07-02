@@ -5,3 +5,5 @@ export 'category.dart';
 export 'stores.dart';
 export 'dashboard.dart';
 export 'upload.dart';
+export 'welcome_screen.dart';
+export 'homescreen.dart';

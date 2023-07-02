@@ -17,7 +17,7 @@ class _WelcomScreenState extends State<WelcomScreen>
   @override
   void initState() {
     _controller =
-        AnimationController(vsync: this, duration: Duration(seconds: 2));
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
     _controller.repeat();
     super.initState();
   }
@@ -125,7 +125,7 @@ class _WelcomScreenState extends State<WelcomScreen>
                               Navigator.pushReplacementNamed(
                                   context, '/supplier_screen');
                             },
-                            child: const Text('Login'),
+                            child: const Text('LogIn'),
                           ),
                           const SizedBox(
                             width: 20,
@@ -161,9 +161,9 @@ class _WelcomScreenState extends State<WelcomScreen>
                           ElevatedButton(
                             onPressed: () {
                               Navigator.pushReplacementNamed(
-                                  context, '/customer_screen');
+                                  context, '/customer_login');
                             },
-                            child: const Text('Login'),
+                            child: const Text('LogIn'),
                           ),
                           const SizedBox(
                             width: 20,
@@ -171,7 +171,7 @@ class _WelcomScreenState extends State<WelcomScreen>
                           ElevatedButton(
                             onPressed: () {
                               Navigator.pushReplacementNamed(
-                                  context, '/customer_screen');
+                                  context, '/customer_signup');
                             },
                             child: const Text('Sign Up'),
                           ),

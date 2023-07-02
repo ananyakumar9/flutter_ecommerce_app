@@ -156,77 +156,85 @@ class Account extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const SizedBox(
-                      height: 140,
-                      child: Image(image: AssetImage('images/inapp/logo.jpg')),
-                    ),
-                    subsectionTitle(title: 'Account Information'),
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Container(
-                        decoration: const BoxDecoration(
-                            color: tertiary,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10))),
-                        child: Column(
-                          children: [
-                            const ListTile(
-                                leading: Icon(Icons.email),
-                                title: Text('Email Address'),
-                                subtitle: Text('example@email.com')),
-                            primaryDivider(context),
-                            const ListTile(
-                                leading: Icon(Icons.phone),
-                                title: Text('Phone No.'),
-                                subtitle: Text('+91 7758992963')),
-                            primaryDivider(context),
-                            const ListTile(
-                                leading: Icon(Icons.location_pin),
-                                title: Text('Address'),
-                                subtitle: Text('Mohammadwadi, Pune')),
-                          ],
-                        ),
-                      ),
-                    ),
-                    subsectionTitle(title: 'Account Setting'),
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Container(
-                        decoration: const BoxDecoration(
-                            color: tertiary,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10))),
-                        child: Column(
-                          children: [
-                            GestureDetector(
-                              onTap: () {},
-                              child: const ListTile(
-                                leading: Icon(Icons.edit),
-                                title: Text('Edit Profile'),
+                    Container(
+                      color: Colors.grey.shade300,
+                      child: Column(
+                        children: [
+                          const SizedBox(
+                            height: 140,
+                            child: Image(
+                                image: AssetImage('images/inapp/logo.jpg')),
+                          ),
+                          subsectionTitle(title: 'Account Information'),
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                  color: tertiary,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10))),
+                              child: Column(
+                                children: [
+                                  const ListTile(
+                                      leading: Icon(Icons.email),
+                                      title: Text('Email Address'),
+                                      subtitle: Text('example@email.com')),
+                                  primaryDivider(context),
+                                  const ListTile(
+                                      leading: Icon(Icons.phone),
+                                      title: Text('Phone No.'),
+                                      subtitle: Text('+91 7758992963')),
+                                  primaryDivider(context),
+                                  const ListTile(
+                                      leading: Icon(Icons.location_pin),
+                                      title: Text('Address'),
+                                      subtitle: Text('Mohammadwadi, Pune')),
+                                ],
                               ),
                             ),
-                            primaryDivider(context),
-                            GestureDetector(
-                              onTap: () {},
-                              child: const ListTile(
-                                leading: Icon(Icons.lock),
-                                title: Text('Change Password'),
+                          ),
+                          subsectionTitle(title: 'Account Setting'),
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                  color: tertiary,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10))),
+                              child: Column(
+                                children: [
+                                  GestureDetector(
+                                    onTap: () {},
+                                    child: const ListTile(
+                                      leading: Icon(Icons.edit),
+                                      title: Text('Edit Profile'),
+                                    ),
+                                  ),
+                                  primaryDivider(context),
+                                  GestureDetector(
+                                    onTap: () {},
+                                    child: const ListTile(
+                                      leading: Icon(Icons.lock),
+                                      title: Text('Change Password'),
+                                    ),
+                                  ),
+                                  primaryDivider(context),
+                                  GestureDetector(
+                                    onTap: () {
+                                      globalStore.setPageIndex(index: 0);
+                                      Navigator.pushReplacementNamed(
+                                          context, '/welcome_screen');
+                                    },
+                                    child: const ListTile(
+                                      leading: Icon(Icons.logout),
+                                      title: Text('Log Out'),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            primaryDivider(context),
-                            GestureDetector(
-                              onTap: () {
-                                globalStore.setPageIndex(index: 0);
-                                Navigator.pushReplacementNamed(
-                                    context, '/welcome_screen');
-                              },
-                              child: const ListTile(
-                                leading: Icon(Icons.logout),
-                                title: Text('Log Out'),
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ],

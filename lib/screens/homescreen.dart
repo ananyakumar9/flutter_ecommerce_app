@@ -3,7 +3,7 @@ import 'package:ecommerce_app/screens/index.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
 
-import 'global_store.dart';
+import '../global_store.dart';
 
 class CustomerHomeScreen extends StatefulWidget {
   const CustomerHomeScreen({super.key});
